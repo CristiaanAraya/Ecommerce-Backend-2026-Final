@@ -7,6 +7,7 @@ Sistema de e-commerce con **Clean Architecture**, **CQRS** y **microservicio de 
 ## Tecnologías
 
 | Tecnología            | Uso |
+|---|---|
 | .NET 10.0 SDK         | Runtime y compilación |
 | ASP.NET Core          | Web API |
 | Entity Framework Core | ORM y persistencia |
@@ -214,7 +215,7 @@ Flujo de creación de orden:
 ## Puertos y URLs
 
 | Servicio        | Puerto  | URL Base                | Swagger |
-|---|---|
+|---|---|---|---|
 | Stock Service   | `5050`  | `http://localhost:5050` | `http://localhost:5050/swagger` |
 | E-commerce API  | `5047`  | `http://localhost:5047` | `http://localhost:5047/swagger` |
 
@@ -229,7 +230,7 @@ Configurado en:
 ### E-commerce API (`http://localhost:5047`)
 
 | Método    | Ruta                                   | Auth | Descripción |
-|---|---|
+|---|---|---|---|
 | `POST`    | `/api/Auth/register`                   | No   | Registro de usuario |
 | `POST`    | `/api/Auth/login`                      | No   | Login, devuelve JWT |
 | `GET`     | `/api/Categories`                      | No   | Lista de categorías |
@@ -250,7 +251,7 @@ Configurado en:
 ### Stock Service (`http://localhost:5050`)
 
 | Método | Ruta                     | Descripción |
-|---|---|
+|---|---|---|
 | `GET`  | `/api/Stock`             | Lista de todo el stock |
 | `GET`  | `/api/Stock/{productId}` | Stock de un producto |
 | `POST` | `/api/Stock`             | Agregar stock (crea si no existe) |
@@ -264,7 +265,6 @@ Configurado en:
 ### Paso 1: Iniciar el Stock Service (primero)
 
 ```powershell
-cd D:\FACULTAD\TERCERO\Backend\Final\Ecommerce
 dotnet run --project "StockService\src\Stock.Api\Stock.Api.csproj"
 ```
 
@@ -275,7 +275,6 @@ Esperar a que aparezca `Now listening on: http://localhost:5050`.
 En una **nueva terminal**:
 
 ```powershell
-cd D:\FACULTAD\TERCERO\Backend\Final\Ecommerce
 dotnet run --project "Backend-Principal\src\ECommerce.Api\ECommerce.Api.csproj"
 ```
 
@@ -296,7 +295,7 @@ Remove-Item "Backend-Principal\src\ECommerce.Api\ecommerce.db"
 ## Usuarios precargados (seed data)
 
 | Rol          | Email                    | Contraseña |
-|---|---|
+|---|---|---|
 | **Admin**    | `admin@ecommerce.com`    | `Admin@2024` |
 | **Customer** | `cliente@ecommerce.com`  | `Cliente@2024` |
 
@@ -307,7 +306,7 @@ El `DbInitializer` se ejecuta automáticamente al iniciar cada servicio. Si los 
 ## Productos precargados
 
 | # | Producto              | GUID                                   | Stock |
-|---|---|
+|---|---|---|---|
 | 1 | Laptop Gamer          | `00000000-0000-0000-0000-000000000001` | 10 |
 | 2 | Teclado Mecánico      | `00000000-0000-0000-0000-000000000002` | 50 |
 | 3 | Mouse Inalámbrico     | `00000000-0000-0000-0000-000000000003` | 30 |
