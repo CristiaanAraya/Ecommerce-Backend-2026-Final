@@ -1,0 +1,23 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+## SQLite
+*.db
+*.db-shm
+*.db-wal
+
+## Logs
+*.log
+
+## Tools / scripts temporales
+tools/
+stock_err.txt
+stock_out.txt
+
+## OS
+.DS_Store
+Thumbs.db
