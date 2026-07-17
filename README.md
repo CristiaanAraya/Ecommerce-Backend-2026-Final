@@ -178,24 +178,29 @@ Flujo de creación de orden:
 | `ProductReview` | Reseña de un producto con calificación (1-5) |
 
 | Value Object  | Propiedades                             | Reglas |
+|---|---|---|
 | `Email`       | `string Value`                          | Formato válido, se almacena en minúsculas |
 | `Money`       | `decimal Amount`                        | No negativo, operadores `+` y `*` |
 | `Address`     | `Street, City, State, ZipCode, Country` | Street y City obligatorios |
 
 | Enum          | Valores |
+|---|---|
 | `OrderStatus` | `Pending, Confirmed, Shipped, Delivered, Cancelled` |
 
 ### Stock.Domain
 
 | Entidad         | Propósito |
+|---|---|
 | `ProductStock`  | Stock de un producto (total, reservado, disponible) |
 | `StockMovement` | Auditoría de cada cambio en el stock |
 
 | Value Object  | Propiedades     | Reglas |
+|---|---|---|
 | `Quantity`    | `int Value`     | No negativo, operadores `+` y `-` |
 | `ProductName` | `string Value`  | No vacío, max 200 caracteres |
 
 | Enum              | Valores |
+|---|---|
 | `StockChangeType` | `Addition, Reservation, Release` |
 
 ---
