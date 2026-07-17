@@ -56,7 +56,6 @@ ECommerce.Api/               ← Capa de Presentación
 
 ECommerce.Application/       ← Capa de Aplicación
 ├── Contracts/Infrastructure/ ← Interfaces de servicios (ITokenService, IHashService, IStockServiceClient)
-├── Common/                   ← PagedData<T>
 ├── Behaviors/                ← ValidationBehavior<T>
 ├── Features/                 ← CQRS agrupado por feature
 │   ├── Auth/Commands/        ← SignUp, SignIn
@@ -210,6 +209,7 @@ Flujo de creación de orden:
 ## Puertos y URLs
 
 | Servicio        | Puerto  | URL Base                | Swagger |
+|---|---|
 | Stock Service   | `5050`  | `http://localhost:5050` | `http://localhost:5050/swagger` |
 | E-commerce API  | `5047`  | `http://localhost:5047` | `http://localhost:5047/swagger` |
 
@@ -224,6 +224,7 @@ Configurado en:
 ### E-commerce API (`http://localhost:5047`)
 
 | Método    | Ruta                                   | Auth | Descripción |
+|---|---|
 | `POST`    | `/api/Auth/register`                   | No   | Registro de usuario |
 | `POST`    | `/api/Auth/login`                      | No   | Login, devuelve JWT |
 | `GET`     | `/api/Categories`                      | No   | Lista de categorías |
@@ -244,6 +245,7 @@ Configurado en:
 ### Stock Service (`http://localhost:5050`)
 
 | Método | Ruta                     | Descripción |
+|---|---|
 | `GET`  | `/api/Stock`             | Lista de todo el stock |
 | `GET`  | `/api/Stock/{productId}` | Stock de un producto |
 | `POST` | `/api/Stock`             | Agregar stock (crea si no existe) |
@@ -289,6 +291,7 @@ Remove-Item "Backend-Principal\src\ECommerce.Api\ecommerce.db"
 ## Usuarios precargados (seed data)
 
 | Rol          | Email                    | Contraseña |
+|---|---|
 | **Admin**    | `admin@ecommerce.com`    | `Admin@2024` |
 | **Customer** | `cliente@ecommerce.com`  | `Cliente@2024` |
 
@@ -299,6 +302,7 @@ El `DbInitializer` se ejecuta automáticamente al iniciar cada servicio. Si los 
 ## Productos precargados
 
 | # | Producto              | GUID                                   | Stock |
+|---|---|
 | 1 | Laptop Gamer          | `00000000-0000-0000-0000-000000000001` | 10 |
 | 2 | Teclado Mecánico      | `00000000-0000-0000-0000-000000000002` | 50 |
 | 3 | Mouse Inalámbrico     | `00000000-0000-0000-0000-000000000003` | 30 |
